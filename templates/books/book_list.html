@@ -1,0 +1,19 @@
+<!-- books/templates/books/book_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <ul>
+        {% for book in object_list %}
+            <li>
+                <a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'book_create' %}">Add a new book</a>
+</body>
+</html>
